@@ -19,7 +19,7 @@ export const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experien
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Career Journey & Leadership History
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-2xl">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-2xl text-justify">
             A progressive history of product ownership across venture-backed scaleups, driving product-market fit and operational scale.
           </p>
         </div>
@@ -50,7 +50,7 @@ export const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experien
               </div>
 
               {/* Highlights Bullet List */}
-              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-outside pl-4 leading-relaxed">
+              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-outside pl-4 leading-relaxed text-justify">
                 {exp.highlights.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}

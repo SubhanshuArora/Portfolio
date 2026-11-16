@@ -479,7 +479,7 @@ export function generateGoogleSitesEmbedHtml(
             </div>
             <h1 class="headline">${escapeHtml(profile.headline)}</h1>
             <div class="trust-row">
-              <span class="trust-ok">&#10003; ${escapeHtml(profile.workPermit || 'Valid in Germany, unrestricted employment permitted')}</span>
+              <span class="trust-ok">&#10003; ${escapeHtml(profile.workPermit || 'Valid work permit in Germany')}</span>
               <span>&middot;</span>
               <span>Languages: ${escapeHtml((profile.languages || ['English (C1)']).join(', '))}</span>
               ${profile.phone ? `<span>&middot;</span><a href="tel:${escapeHtml(profile.phone)}">${escapeHtml(profile.phone)}</a>` : ''}
@@ -780,7 +780,7 @@ export function generateGoogleSitesNativeKit(portfolio: PortfolioData): GoogleSi
           id: 'home-banner',
           title: 'Hero Banner Title & Subheader',
           placementHint: 'Top Banner / Title block',
-          content: `${profile.headline}\n\n${profile.fullName} · ${profile.title} · ${profile.location}\n${profile.openToRoles} | ${profile.workPermit || 'Valid in Germany, unrestricted employment permitted'} | Languages: ${(profile.languages || ['English (C1)']).join(', ')}`,
+          content: `${profile.headline}\n\n${profile.fullName} · ${profile.title} · ${profile.location}\n${profile.openToRoles} | ${profile.workPermit || 'Valid work permit in Germany'} | Languages: ${(profile.languages || ['English (C1)']).join(', ')}`,
         },
         {
           id: 'home-bio',

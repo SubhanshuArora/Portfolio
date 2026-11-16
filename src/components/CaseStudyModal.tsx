@@ -63,7 +63,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2">
             {project.title}
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-5 max-w-3xl">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-5 max-w-3xl text-justify">
             {project.subtitle}
           </p>
 
@@ -160,10 +160,10 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
                   The Problem & Solution at a Glance
                 </h4>
-                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300">
+                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300 text-justify">
                   {caseStudy.problemContext}
                 </p>
-                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300">
+                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300 text-justify">
                   {caseStudy.resultsImpact}
                 </p>
               </div>
@@ -202,7 +202,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                   The Customer Problem & Opportunity Context
                 </h4>
-                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300">
+                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300 text-justify">
                   {caseStudy.problemContext}
                 </p>
               </div>
@@ -211,7 +211,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                   Customer Discovery & User Research Insights
                 </h4>
-                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300">
+                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300 text-justify">
                   {caseStudy.discoveryResearch}
                 </p>
               </div>
@@ -232,7 +232,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                   Strategic Prioritization & Trade-Offs
                 </h4>
-                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300">
+                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300 text-justify">
                   {caseStudy.strategicPrioritization}
                 </p>
               </div>
@@ -241,7 +241,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 <span className="font-bold text-indigo-900 dark:text-indigo-300 block">
                   North Star Metric Alignment: {project.northStarMetric}
                 </span>
-                <p className="text-indigo-800/80 dark:text-indigo-200/80">
+                <p className="text-indigo-800/80 dark:text-indigo-200/80 text-justify">
                   Prioritized around leading indicators that move the core business metric while actively pruning scope that did not directly de-risk the primary customer hypothesis.
                 </p>
               </div>
@@ -255,7 +255,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                   Solution Architecture & Delivery Sprints
                 </h4>
-                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300">
+                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300 text-justify">
                   {caseStudy.solutionExecution}
                 </p>
               </div>
@@ -285,7 +285,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                   Quantified Business ROI & Metric Outcomes
                 </h4>
-                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300 mb-6">
+                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300 mb-6 text-justify">
                   {caseStudy.resultsImpact}
                 </p>
               </div>
@@ -317,7 +317,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                   Retrospective: What Worked & What We Would Do Differently
                 </h4>
-                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300">
+                <p className="whitespace-pre-line text-slate-600 dark:text-slate-300 text-justify">
                   {caseStudy.learningsRetrospective}
                 </p>
               </div>
@@ -326,7 +326,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 <span className="font-bold text-amber-900 dark:text-amber-300 block">
                   Product Leadership Reflection
                 </span>
-                <p className="text-amber-800/80 dark:text-amber-200/80">
+                <p className="text-amber-800/80 dark:text-amber-200/80 text-justify">
                   Great product managers share honest post-mortems. Highlighting technical or operational trade-offs demonstrates senior decision-making maturity.
                 </p>
               </div>

@@ -18,7 +18,7 @@ import { Footer } from './components/Footer';
 import { DEFAULT_PORTFOLIO } from './data/defaultPortfolio';
 import { PortfolioData, Project, ProfileData } from './types/portfolio';
 
-const STORAGE_KEY = 'pm_portfolio_subhanshu_v14';
+const STORAGE_KEY = 'pm_portfolio_subhanshu_v15';
 
 export default function App() {
   // Theme state
@@ -159,10 +159,6 @@ export default function App() {
       {/* Top Bar Navigation */}
       <Header
         profile={portfolio.profile}
-        isEditMode={isEditMode}
-        onToggleEditMode={() => setIsEditMode(!isEditMode)}
-        onOpenEditProfile={() => setIsEditProfileOpen(true)}
-        onOpenShareModal={() => setIsShareModalOpen(true)}
         isDarkMode={isDarkMode}
         onToggleDarkMode={() => setIsDarkMode(!isDarkMode)}
       />

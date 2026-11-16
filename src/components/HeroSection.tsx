@@ -12,7 +12,7 @@ const renderFormattedBio = (text: string) => {
   return text.split(/\n\s*\n/).map((paragraph, pIdx) => {
     const parts = paragraph.split(/(\*\*.*?\*\*)/g);
     return (
-      <p key={pIdx} className="mb-4 last:mb-0 leading-relaxed text-slate-600 dark:text-slate-300">
+      <p key={pIdx} className="mb-4 last:mb-0 leading-relaxed text-slate-600 dark:text-slate-300 text-justify">
         {parts.map((part, i) => {
           if (part.startsWith('**') && part.endsWith('**')) {
             return (
@@ -59,49 +59,52 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Full-Width Hero Header spanning above both description and portrait on desktop */}
+        <div className="mb-8 lg:mb-10">
+          {/* Editorial kicker & Open status (Unboxed clean text) */}
+          <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400 mb-4 tracking-wide uppercase">
+            <span className="text-slate-900 dark:text-white font-bold tracking-normal text-sm normal-case">{profile.fullName}</span>
+            <span aria-hidden="true">·</span>
+            <span className="text-indigo-600 dark:text-indigo-400 font-semibold">{profile.title}</span>
+            <span aria-hidden="true">·</span>
+            <span className="flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-slate-400" />
+              {profile.location}
+            </span>
+            <span aria-hidden="true">·</span>
+            <span className="text-emerald-700 dark:text-emerald-400 font-medium">{profile.openToRoles}</span>
+          </div>
+
+          {/* Headline spanning across description & portrait with text-wrap: balance */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.14] mb-5 max-w-5xl" style={{ textWrap: 'balance' }}>
+            {profile.headline}
+          </h1>
+
+          {/* Work permit & Language pill-free trust indicators */}
+          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600 dark:text-slate-300 font-medium">
+            <span className="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-semibold">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              {profile.workPermit || 'Valid work permit in Germany'}
+            </span>
+            <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
+            <span>Languages: {profile.languages && profile.languages.length > 0 ? profile.languages.join(', ') : 'English (C1)'}</span>
+            {profile.phone && (
+              <>
+                <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
+                <a href={`tel:${profile.phone}`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  {profile.phone}
+                </a>
+              </>
+            )}
+          </div>
+        </div>
         
-        {/* Split Screen Hero Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+        {/* Split Screen Hero Layout: Description & Competencies (Left) + Portrait Card (Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Typographic Hierarchy */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
-            
-            {/* Editorial kicker & Open status (Unboxed clean text) */}
-            <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400 mb-4 tracking-wide uppercase">
-              <span className="text-slate-900 dark:text-white font-bold tracking-normal text-sm normal-case">{profile.fullName}</span>
-              <span aria-hidden="true">·</span>
-              <span className="text-indigo-600 dark:text-indigo-400 font-semibold">{profile.title}</span>
-              <span aria-hidden="true">·</span>
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                {profile.location}
-              </span>
-              <span aria-hidden="true">·</span>
-              <span className="text-emerald-700 dark:text-emerald-400 font-medium">{profile.openToRoles}</span>
-            </div>
-
-            {/* Headline with text-wrap: balance */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.14] mb-5" style={{ textWrap: 'balance' }}>
-              {profile.headline}
-            </h1>
-
-            {/* Work permit & Language pill-free trust indicators */}
-            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600 dark:text-slate-300 mb-5 font-medium">
-              <span className="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-semibold">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                Valid in Germany (Unrestricted Work Permit)
-              </span>
-              <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
-              <span>Languages: {profile.languages && profile.languages.length > 0 ? profile.languages.join(', ') : 'English (C1)'}</span>
-              {profile.phone && (
-                <>
-                  <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
-                  <a href={`tel:${profile.phone}`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                    {profile.phone}
-                  </a>
-                </>
-              )}
-            </div>
+          {/* Left Column: Narrative & Competencies */}
+          <div className="lg:col-span-7 flex flex-col justify-start">
 
             {/* Lead Narrative / Bio */}
             <div className="text-base sm:text-lg mb-8 max-w-2xl">
@@ -168,8 +171,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           </div>
 
-          {/* Right Column: Visual Container at matching height */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center">
+          {/* Right Column: Visual Container aligned at top alongside description */}
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-start">
             <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
               
               {/* Photo Frame with Fallback Container */}

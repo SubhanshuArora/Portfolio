@@ -17,7 +17,7 @@ export const DEFAULT_PORTFOLIO: PortfolioData = {
     linkedinUrl: "https://linkedin.com/in/subhanshu-arora",
     githubOrWebUrl: "",
     openToRoles: "Open to Product Manager / Growth PM / Lead PM roles",
-    workPermit: "Valid in Germany, unrestricted employment permitted",
+    workPermit: "Valid work permit in Germany",
     languages: ["English (C1)"],
     resumePdfUrl: `${BASE}assets/aistudio/Product_Manager_-_Subhanshu_Arora_Resume_cc28ed7f.pdf`,
     avatarUrl: `${BASE}assets/aistudio/Gemini_Generated_Image_i954p7i954p7i954_1cb5e590.png`,

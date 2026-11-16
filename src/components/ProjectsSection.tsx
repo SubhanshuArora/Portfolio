@@ -43,7 +43,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Featured Products & PM Case Studies
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-2xl">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-2xl text-justify">
               Deep dive into end-to-end product execution: from customer discovery and prioritization trade-offs to cross-functional squad delivery and measured business ROI.
             </p>
           </div>
@@ -172,7 +172,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </h3>
 
                 {/* Subtitle / One-Liner */}
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5 text-justify">
                   {project.subtitle}
                 </p>
 
