@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { X, Save, Plus, Trash2, Image as ImageIcon } from 'lucide-react';
 import { Project, MetricItem } from '../types/portfolio';
+import traceAmigoCover from '../assets/images/project_traceamigo_brand_1794835080871.jpg';
+import assetDataMartCover from '../assets/images/project_asset_data_mart_1794834069204.jpg';
+import productHierarchyCover from '../assets/images/project_product_hierarchy_1794834068312.jpg';
+import growthFunnelCover from '../assets/images/project_growth_funnel_1793544393475.jpg';
 
 interface ProjectEditorModalProps {
   project: Project | null; // null = adding new
@@ -10,10 +14,10 @@ interface ProjectEditorModalProps {
 }
 
 const DEFAULT_IMAGES = [
-  { label: 'TraceAmigo TravelTech', url: '/src/assets/images/project_traceamigo_brand_1794835080871.jpg' },
-  { label: 'Asset Data Mart & ETL', url: '/src/assets/images/project_asset_data_mart_1794834069204.jpg' },
-  { label: 'Product Hierarchy Builder', url: '/src/assets/images/project_product_hierarchy_1794834068312.jpg' },
-  { label: 'Growth & Funnel Analytics', url: '/src/assets/images/project_growth_funnel_1793544393475.jpg' },
+  { label: 'TraceAmigo TravelTech', url: traceAmigoCover },
+  { label: 'Asset Data Mart & ETL', url: assetDataMartCover },
+  { label: 'Product Hierarchy Builder', url: productHierarchyCover },
+  { label: 'Growth & Funnel Analytics', url: growthFunnelCover },
 ];
 
 export const ProjectEditorModal: React.FC<ProjectEditorModalProps> = ({

@@ -1,8 +1,10 @@
 import { PortfolioData } from '../types/portfolio';
-import traceamigoImg from '../assets/images/project_traceamigo_brand_1794835080871.jpg';
-import assetDataMartImg from '../assets/images/project_asset_data_mart_1794834069204.jpg';
-import productHierarchyImg from '../assets/images/project_product_hierarchy_1794834068312.jpg';
-import growthFunnelImg from '../assets/images/project_growth_funnel_1793544393475.jpg';
+import traceAmigoCover from '../assets/images/project_traceamigo_brand_1794835080871.jpg';
+import assetDataMartCover from '../assets/images/project_asset_data_mart_1794834069204.jpg';
+import productHierarchyCover from '../assets/images/project_product_hierarchy_1794834068312.jpg';
+import growthFunnelCover from '../assets/images/project_growth_funnel_1793544393475.jpg';
+
+const BASE = import.meta.env.BASE_URL;
 
 export const DEFAULT_PORTFOLIO: PortfolioData = {
   profile: {
@@ -17,8 +19,8 @@ export const DEFAULT_PORTFOLIO: PortfolioData = {
     openToRoles: "Open to Product Manager / Growth PM / Lead PM roles",
     workPermit: "Valid in Germany, unrestricted employment permitted",
     languages: ["English (C1)"],
-    resumePdfUrl: "/assets/aistudio/Product_Manager_-_Subhanshu_Arora_Resume_cc28ed7f.pdf",
-    avatarUrl: "/assets/aistudio/Gemini_Generated_Image_i954p7i954p7i954_1cb5e590.png",
+    resumePdfUrl: `${BASE}assets/aistudio/Product_Manager_-_Subhanshu_Arora_Resume_cc28ed7f.pdf`,
+    avatarUrl: `${BASE}assets/aistudio/Gemini_Generated_Image_i954p7i954p7i954_1cb5e590.png`,
     bio: `I'm a **Product Manager, entrepreneur, and digital transformation professional** with 10+ years of experience at the intersection of business, technology, data analytics, and product development.
 
 I enjoy identifying opportunities, understanding complex problems, and transforming them into practical digital solutions. My experience spans product strategy, customer discovery, business analysis, MVP development, UX/UI design, cross-functional leadership, and data-driven decision-making.
@@ -75,7 +77,7 @@ I hold an **M.Sc. in Leadership in Digital Transformation** and am a winner of a
       company: "TraceAmigo (Startup)",
       timeline: "01/2026 – Present",
       northStarMetric: "Pre-Launch Validation (150+ Signups & Pitch Wins)",
-      coverImage: traceamigoImg,
+      coverImage: traceAmigoCover,
       tags: ["0-to-1 Product", "TravelTech", "Customer Discovery", "MVP Definition", "UX/UI Design", "GTM"],
       featured: true,
       metrics: [
@@ -151,7 +153,7 @@ TravelTech solutions in the market either cater strictly to corporate business i
       company: "RoutineAI (Startup)",
       timeline: "02/2022 – 06/2024",
       northStarMetric: "Operational Efficiency (+20%) & Automated SLA Delivery",
-      coverImage: assetDataMartImg,
+      coverImage: assetDataMartCover,
       tags: ["0-to-1 Data Architecture", "Asset Data Mart", "ETL Automation", "B2B SaaS", "SLAs & KPIs"],
       featured: true,
       metrics: [
@@ -224,7 +226,7 @@ Without a unified data foundation, scaling analytics capabilities across additio
       company: "RoutineAI (Startup)",
       timeline: "02/2022 – 06/2024",
       northStarMetric: "1-to-n Client Standardization & Forecasting Readiness",
-      coverImage: productHierarchyImg,
+      coverImage: productHierarchyCover,
       tags: ["Product Hierarchy", "Solution Design", "Forecasting", "B2B SaaS Scaling", "Team Scaling"],
       featured: true,
       metrics: [
@@ -298,7 +300,7 @@ Each new client engagement required painful manual SKU mapping before forecastin
       company: "Vaco Binary Semantics (Partnering with Google)",
       timeline: "11/2018 – 01/2022",
       northStarMetric: "Error Rate Reduction (12–15% down to 5–8%)",
-      coverImage: growthFunnelImg,
+      coverImage: growthFunnelCover,
       tags: ["Data Quality", "Google Partnership", "Tableau", "SQL", "Process Improvement"],
       featured: true,
       metrics: [

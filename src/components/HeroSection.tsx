@@ -137,7 +137,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               {/* Direct PDF Resume Download */}
               <a
-                href={profile.resumePdfUrl || "/assets/aistudio/Product_Manager_-_Subhanshu_Arora_Resume_cc28ed7f.pdf"}
+                href={profile.resumePdfUrl || `${import.meta.env.BASE_URL}assets/aistudio/Product_Manager_-_Subhanshu_Arora_Resume_cc28ed7f.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Subhanshu_Arora_Resume_Product_Manager.pdf"

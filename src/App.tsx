@@ -18,7 +18,7 @@ import { Footer } from './components/Footer';
 import { DEFAULT_PORTFOLIO } from './data/defaultPortfolio';
 import { PortfolioData, Project, ProfileData } from './types/portfolio';
 
-const STORAGE_KEY = 'pm_portfolio_subhanshu_v13';
+const STORAGE_KEY = 'pm_portfolio_subhanshu_v14';
 
 export default function App() {
   // Theme state
