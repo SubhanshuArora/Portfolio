@@ -4,9 +4,10 @@ import { ProfileData } from '../types/portfolio';
 
 interface FooterProps {
   profile: ProfileData;
+  onOpenContact: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ profile }) => {
+export const Footer: React.FC<FooterProps> = ({ profile, onOpenContact }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -27,13 +28,14 @@ export const Footer: React.FC<FooterProps> = ({ profile }) => {
 
         {/* Right: Quick Links & Back to Top */}
         <div className="flex items-center gap-6 text-xs text-slate-500 dark:text-slate-400">
-          {profile.email && (
-            <a
-              href={`mailto:${profile.email}`}
+          {(profile.email || profile.phone) && (
+            <button
+              type="button"
+              onClick={onOpenContact}
               className="hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               Contact
-            </a>
+            </button>
           )}
           {profile.linkedinUrl && (
             <a

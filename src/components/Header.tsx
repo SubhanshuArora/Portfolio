@@ -6,6 +6,7 @@ interface HeaderProps {
   profile: ProfileData;
   isDarkMode: boolean;
   onToggleDarkMode: () => void;
+  onOpenContact: () => void;
 }
 
 const NAV_LINKS = [
@@ -20,13 +21,13 @@ export const Header: React.FC<HeaderProps> = ({
   profile,
   isDarkMode,
   onToggleDarkMode,
+  onOpenContact,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const resumeHref =
     profile.resumePdfUrl ||
     `${import.meta.env.BASE_URL}assets/aistudio/Product_Manager_-_Subhanshu_Arora_Resume_cc28ed7f.pdf`;
-  const contactEmail = profile.email || 'subhanshuarora@gmail.com';
   const linkedinHref = profile.linkedinUrl || 'https://linkedin.com/in/subhanshu-arora';
 
   useEffect(() => {
@@ -103,14 +104,18 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
 
           {/* Contact */}
-          <a
-            href={`mailto:${contactEmail}`}
-            title={`Contact ${contactEmail}`}
+          <button
+            type="button"
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              onOpenContact();
+            }}
+            title="View Contact Details (Email & Phone)"
             className="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all shadow-sm whitespace-nowrap shrink-0 bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
           >
             <Mail className="w-3.5 h-3.5" />
             <span>Contact</span>
-          </a>
+          </button>
 
           {/* Mobile / Compact View Hamburger Menu Button (after Contact) */}
           <button

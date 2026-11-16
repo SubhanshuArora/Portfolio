@@ -14,6 +14,7 @@ import { CaseStudyModal } from './components/CaseStudyModal';
 import { EditProfileModal } from './components/EditProfileModal';
 import { ProjectEditorModal } from './components/ProjectEditorModal';
 import { ExportShareModal } from './components/ExportShareModal';
+import { ContactModal } from './components/ContactModal';
 import { Footer } from './components/Footer';
 import { DEFAULT_PORTFOLIO } from './data/defaultPortfolio';
 import { PortfolioData, Project, ProfileData } from './types/portfolio';
@@ -56,6 +57,7 @@ export default function App() {
   const [isProjectEditorOpen, setIsProjectEditorOpen] = useState<boolean>(false);
   const [projectToEdit, setProjectToEdit] = useState<Project | null>(null);
   const [isShareModalOpen, setIsShareModalOpen] = useState<boolean>(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Sync theme with HTML class
@@ -161,6 +163,7 @@ export default function App() {
         profile={portfolio.profile}
         isDarkMode={isDarkMode}
         onToggleDarkMode={() => setIsDarkMode(!isDarkMode)}
+        onOpenContact={() => setIsContactModalOpen(true)}
       />
 
       {/* Main Content Layout */}
@@ -171,6 +174,7 @@ export default function App() {
           profile={portfolio.profile}
           isEditMode={isEditMode}
           onOpenEditProfile={() => setIsEditProfileOpen(true)}
+          onOpenContact={() => setIsContactModalOpen(true)}
         />
 
         {/* Section 2: Projects / Products Case Studies */}
@@ -204,7 +208,10 @@ export default function App() {
       </main>
 
       {/* Quiet Footer */}
-      <Footer profile={portfolio.profile} />
+      <Footer
+        profile={portfolio.profile}
+        onOpenContact={() => setIsContactModalOpen(true)}
+      />
 
       {/* MODALS */}
 
@@ -237,6 +244,13 @@ export default function App() {
         onClose={() => setIsShareModalOpen(false)}
         onImport={handleImport}
         onResetToDefault={handleResetToDefault}
+      />
+
+      {/* 5. Contact Info Modal (Email & Phone) */}
+      <ContactModal
+        profile={portfolio.profile}
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
 
       {/* Toast Feedback Notification */}

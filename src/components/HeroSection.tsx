@@ -6,6 +6,7 @@ interface HeroSectionProps {
   profile: ProfileData;
   isEditMode: boolean;
   onOpenEditProfile: () => void;
+  onOpenContact: () => void;
 }
 
 const renderFormattedBio = (text: string) => {
@@ -32,6 +33,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   profile,
   isEditMode,
   onOpenEditProfile,
+  onOpenContact,
 }) => {
   const handlePrintResume = () => {
     window.print();
@@ -89,14 +91,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
             <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
             <span>Languages: {profile.languages && profile.languages.length > 0 ? profile.languages.join(', ') : 'English (C1)'}</span>
-            {profile.phone && (
-              <>
-                <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
-                <a href={`tel:${profile.phone}`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                  {profile.phone}
-                </a>
-              </>
-            )}
           </div>
         </div>
         
@@ -216,15 +210,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
                 {/* Direct Link Badges */}
                 <div className="pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-medium text-slate-600 dark:text-slate-300">
-                  {profile.email && (
-                    <a
-                      href={`mailto:${profile.email}`}
-                      className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 underline decoration-indigo-500/40 underline-offset-4 flex items-center gap-1.5 transition-colors whitespace-nowrap"
-                      title={`Send email to ${profile.email}`}
+                  {(profile.email || profile.phone) && (
+                    <button
+                      type="button"
+                      onClick={onOpenContact}
+                      className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                      title="View Contact Details (Email & Phone)"
                     >
                       <Mail className="w-4 h-4 shrink-0" />
-                      <span>{profile.email}</span>
-                    </a>
+                      <span>Contact</span>
+                    </button>
                   )}
                   {profile.linkedinUrl && (
                     <a
