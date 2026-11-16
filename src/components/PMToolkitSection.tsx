@@ -43,7 +43,7 @@ export const PMToolkitSection: React.FC<PMToolkitSectionProps> = ({
               {frameworks.map((framework, idx) => (
                 <div key={idx} className="py-3.5 flex items-start gap-3">
                   <span className="font-mono text-xs font-bold text-indigo-500 dark:text-indigo-400 mt-0.5">
-                    0{idx + 1}.
+                    {idx < 9 ? `0${idx + 1}.` : `${idx + 1}.`}
                   </span>
                   <div>
                     <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 block">

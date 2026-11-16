@@ -442,7 +442,9 @@ Each new client engagement required painful manual SKU mapping before forecastin
     }
   ],
   frameworks: [
-    "0-to-1 Customer Discovery & 30+ Traveller Research",
+    "0-to-1 Product and Data Architecture",
+    "1-to-n Product/Solution Scaling",
+    "Customer Discovery and Industry Research",
     "Product Strategy, Market & Competitive Analysis",
     "MVP Definition & Feature Prioritization",
     "PRDs, User Stories & Backlog Management",

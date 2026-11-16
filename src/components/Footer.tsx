@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ profile }) => {
             {profile.fullName} · {profile.title}
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-            Crafted for executive hiring and continuous product case study iteration.
+            Building 0-to-1 and 1-to-n digital products driven by customer discovery, data, and measurable impact.
           </p>
         </div>
 
